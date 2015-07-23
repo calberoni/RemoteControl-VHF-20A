@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>Control Remoto VHF-20A: Fichero Fuente modules/shiftReg.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo_f_blanco - chico.jpg"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Control Remoto VHF-20A
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Control remoto para equipo tranceptor de VHF</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&#160;de&#160;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Globales</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('shift_reg_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">shiftReg.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="shift_reg_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* Shift register Header file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">Autor: Cristian Alberoni</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef SHIFTREG_H_</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define SHIFTREG_H_</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="shift_reg_8h.html#a7558fe3a1073e3ed554281ff249a4987">    8</a></span>&#160;<span class="preprocessor">#define CERO            0</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="shift_reg_8h.html#a91972adeaba5778d9d12098812bc8d95">    9</a></span>&#160;<span class="preprocessor">#define UNO             1</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="shift_reg_8h.html#a539f7700c3182a8cfba81550da7410a3">   10</a></span>&#160;<span class="preprocessor">#define DOS             2</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="shift_reg_8h.html#a42133a680e15c9aacdd56aa78d71c0df">   11</a></span>&#160;<span class="preprocessor">#define TRES            3</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="shift_reg_8h.html#a2c4d24a19e405ba7ba60c567cb9f4fa3">   12</a></span>&#160;<span class="preprocessor">#define CUATRO          4</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="shift_reg_8h.html#a003690b161bcc26e061320dda9682dda">   13</a></span>&#160;<span class="preprocessor">#define CINCO           5</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="shift_reg_8h.html#ac8445409168cc80b4cba418dfa54c50a">   14</a></span>&#160;<span class="preprocessor">#define SEIS            6</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="shift_reg_8h.html#ae87c1cfb102888c4d510b99017c2712e">   15</a></span>&#160;<span class="preprocessor">#define SIETE           7</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="shift_reg_8h.html#a4a19859c517f8488d419b83bd55d49c7">   16</a></span>&#160;<span class="preprocessor">#define OCHO            8</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="shift_reg_8h.html#a30f5f4d36c5bba380c9dd44c7c000124">   17</a></span>&#160;<span class="preprocessor">#define NUEVE           9</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="shift_reg_8h.html#a1588c5bd298ecd56147551c078fdcbb0">   18</a></span>&#160;<span class="preprocessor">#define VIENTI5         25</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="shift_reg_8h.html#a9c53b5caf6fc64b70a4a0d754033c2a7">   19</a></span>&#160;<span class="preprocessor">#define SETENTAY5       75</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="shift_reg_8h.html#a129634c7ec6f338c158c5c0bf9e89409">   20</a></span>&#160;<span class="preprocessor">#define CINCUENTA       50</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">void</span> <a class="code" href="shift_reg_8h.html#a29d59c7edab62580313a43070ea0107f">shiftRegInit</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">void</span> <a class="code" href="shift_reg_8h.html#aa1923d726582dc74bf584c4b41db92e5">shiftRegPutFrecu</a>(<span class="keywordtype">int</span> <a class="code" href="main_8c.html#a32177d5e9f0f20cf18847266b91f874e">FrecMHz</a>, <span class="keywordtype">int</span> <a class="code" href="main_8c.html#ac4efd0768d978001a8309f99829169cd">FrecKHz</a>); </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">void</span> <a class="code" href="shift_reg_8h.html#ae2d140ed247db66313c2e1fa9ac08b51">shiftRegClear</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">void</span> <a class="code" href="shift_reg_8h.html#a6c9b62e3457ad12024a084e0e4cba25d">shiftRegWriteByte</a>(<span class="keywordtype">char</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">void</span> <a class="code" href="shift_reg_8h.html#a60d4fdd158dedf76cfec605670b9db91">shiftRegWrite2Byte</a>(<span class="keywordtype">int</span> integer);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> <a class="code" href="shift_reg_8h.html#af1cc5fef7a1bd11f731d08fe3ff774c3">shiftRegTest</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SHIFTREG_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="shift_reg_8h_html_af1cc5fef7a1bd11f731d08fe3ff774c3"><div class="ttname"><a href="shift_reg_8h.html#af1cc5fef7a1bd11f731d08fe3ff774c3">shiftRegTest</a></div><div class="ttdeci">void shiftRegTest(void)</div><div class="ttdef"><b>Definition:</b> shiftReg.c:107</div></div>
+<div class="ttc" id="shift_reg_8h_html_ae2d140ed247db66313c2e1fa9ac08b51"><div class="ttname"><a href="shift_reg_8h.html#ae2d140ed247db66313c2e1fa9ac08b51">shiftRegClear</a></div><div class="ttdeci">void shiftRegClear(void)</div><div class="ttdef"><b>Definition:</b> shiftReg.c:70</div></div>
+<div class="ttc" id="main_8c_html_ac4efd0768d978001a8309f99829169cd"><div class="ttname"><a href="main_8c.html#ac4efd0768d978001a8309f99829169cd">FrecKHz</a></div><div class="ttdeci">int FrecKHz</div><div class="ttdef"><b>Definition:</b> main.c:39</div></div>
+<div class="ttc" id="shift_reg_8h_html_a29d59c7edab62580313a43070ea0107f"><div class="ttname"><a href="shift_reg_8h.html#a29d59c7edab62580313a43070ea0107f">shiftRegInit</a></div><div class="ttdeci">void shiftRegInit(void)</div><div class="ttdef"><b>Definition:</b> shiftReg.c:58</div></div>
+<div class="ttc" id="shift_reg_8h_html_a6c9b62e3457ad12024a084e0e4cba25d"><div class="ttname"><a href="shift_reg_8h.html#a6c9b62e3457ad12024a084e0e4cba25d">shiftRegWriteByte</a></div><div class="ttdeci">void shiftRegWriteByte(char)</div><div class="ttdef"><b>Definition:</b> shiftReg.c:75</div></div>
+<div class="ttc" id="shift_reg_8h_html_a60d4fdd158dedf76cfec605670b9db91"><div class="ttname"><a href="shift_reg_8h.html#a60d4fdd158dedf76cfec605670b9db91">shiftRegWrite2Byte</a></div><div class="ttdeci">void shiftRegWrite2Byte(int integer)</div><div class="ttdef"><b>Definition:</b> shiftReg.c:97</div></div>
+<div class="ttc" id="main_8c_html_a32177d5e9f0f20cf18847266b91f874e"><div class="ttname"><a href="main_8c.html#a32177d5e9f0f20cf18847266b91f874e">FrecMHz</a></div><div class="ttdeci">int FrecMHz</div><div class="ttdef"><b>Definition:</b> main.c:38</div></div>
+<div class="ttc" id="shift_reg_8h_html_aa1923d726582dc74bf584c4b41db92e5"><div class="ttname"><a href="shift_reg_8h.html#aa1923d726582dc74bf584c4b41db92e5">shiftRegPutFrecu</a></div><div class="ttdeci">void shiftRegPutFrecu(int FrecMHz, int FrecKHz)</div><div class="ttdef"><b>Definition:</b> shiftReg.c:10</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e05d7e2b1ecd646af5bb94391405f3b5.html">modules</a></li><li class="navelem"><a class="el" href="shift_reg_8h.html">shiftReg.h</a></li>
+    <li class="footer">Generado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
+  </ul>
+</div>
+</body>
+</html>

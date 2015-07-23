@@ -78,7 +78,7 @@ void shiftRegWriteByte(char valor )
   char bitSalida[8];
   
   SFTR_RCLK_POUT &= ~RCLK;      //LATCH LOW
-  schedDelay(1);//Delay de 100ms
+  schedDelay(1);
   
   for (i=0; i<=7;i++)
   {
@@ -86,9 +86,10 @@ void shiftRegWriteByte(char valor )
     valor = valor >>1;
     SFTR_SER_POUT |= bitSalida[i] << SER;
     SFTR_SRCLK_POUT |= SRCLK;   //CLOCK HIGH
-    schedDelay(1);//delay 100ms
+  //  schedDelay(1);
+    
     SFTR_SRCLK_POUT &= ~SRCLK;  //CLOCK LOW
-    schedDelay(1);//delay 100ms
+ //   schedDelay(1);
     SFTR_RCLK_POUT |= RCLK;    //LATCH HIGH
   }
 }
@@ -101,4 +102,12 @@ void shiftRegWrite2Byte(int integer)
   shiftRegWriteByte(aux);
   aux = (char)(integer & 0xff);
   shiftRegWriteByte(aux);
+}
+
+void shiftRegTest()
+{
+  shiftRegWrite2Byte(0xffff);
+  schedDelay(1000);
+  shiftRegWrite2Byte(0x0000);
+  schedDelay(1000);
 }

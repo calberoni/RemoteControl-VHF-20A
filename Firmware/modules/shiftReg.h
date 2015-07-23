@@ -24,5 +24,6 @@ void shiftRegPutFrecu(int FrecMHz, int FrecKHz);
 void shiftRegClear(void);
 void shiftRegWriteByte(char);
 void shiftRegWrite2Byte(int integer);
+void shiftRegTest(void);
 
 #endif /* SHIFTREG_H_ */

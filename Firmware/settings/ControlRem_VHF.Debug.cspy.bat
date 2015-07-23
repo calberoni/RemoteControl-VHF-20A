@@ -25,7 +25,7 @@ if not "%1" == "" goto debugFile
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\common\bin\cspybat" -f "C:\Users\Cristian\Desktop\ImplementacionMSP\settings\ControlRem_VHF.Debug.general.xcl" --backend -f "C:\Users\Cristian\Desktop\ImplementacionMSP\settings\ControlRem_VHF.Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\common\bin\cspybat" -f "D:\facu\Digitales 3\PROYECTO_FINAL\Firmware\settings\ControlRem_VHF.Debug.general.xcl" --backend -f "D:\facu\Digitales 3\PROYECTO_FINAL\Firmware\settings\ControlRem_VHF.Debug.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\common\bin\cspybat" -f "C:\Users\Cristian\Desktop\ImplementacionMSP\settings\ControlRem_VHF.Debug.general.xcl" "--debug_file=%1" --backend -f "C:\Users\Cristian\Desktop\ImplementacionMSP\settings\ControlRem_VHF.Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\common\bin\cspybat" -f "D:\facu\Digitales 3\PROYECTO_FINAL\Firmware\settings\ControlRem_VHF.Debug.general.xcl" "--debug_file=%1" --backend -f "D:\facu\Digitales 3\PROYECTO_FINAL\Firmware\settings\ControlRem_VHF.Debug.driver.xcl" 
 
 @echo off 
 :end

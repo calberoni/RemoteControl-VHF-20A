@@ -16,14 +16,14 @@
 /*Methods declaration (This can be placed in another module)*/
 void vTaskLed( stepType *step );
 void vTaskProcesarSalida( stepType *step );
-//void vTaskLcdPrint( stepType *step );
-
-
+void vTaskProcesarTestMode( stepType *step );
 
 /*RTOS Task pointers*/
 #define	TCBP_TASK_LED  4
-//#define	TCBP_TASK_LCD_CONFIG  2
-#define TCBP_TASK_PROCESAR_SALIDA     3
+#define TCBP_TASK_PROCESAR_SALIDA       2
+#define TCBP_TASK_PROCESAR_TESTM        3
+
+#define DEBOUNCE        10
 
 /*Global Vars*/
   int contInt1ms=0;
@@ -37,6 +37,12 @@ void vTaskProcesarSalida( stepType *step );
   
   int FrecMHz=116;
   int FrecKHz=525;
+  
+  int delayLedTicks = 2000;
+  
+  float timeCount=0;
+  float lastTime = 0;
+  float currentTime = 0;
   
 /*Main Code*/
 void main( void )
@@ -53,13 +59,10 @@ void main( void )
     shiftRegInit();
     lcdInit();
 
-
     /*Services Initialization*/
     schedTaskCreate(vTaskLed, TCBP_TASK_LED);
     schedTaskCreate(vTaskProcesarSalida, TCBP_TASK_PROCESAR_SALIDA);
- //   schedTaskCreate(vTaskLcdPrint,TCBP_TASK_LCD_PRINT);
-    
-    
+ 
     /*Init semaphores*/
     schedEventInit(6,0); //Semaphore number, semaphore state (0 = unsignaled)
 
@@ -67,9 +70,7 @@ void main( void )
     intEnablePriority(ON);
     intLowEnable(ON);
     intHighEnable(ON);
-    
-
-    
+   
     /*Scheduler*/
     for ( ;; )
     {
@@ -85,40 +86,9 @@ __interrupt void hiIntHook(void){
 }
 
 #pragma vector = TIMER1_A0_VECTOR
-__interrupt void lowTimerIntHook(void){
-  
-  if (contInt20ms >=20){
-    contInt20ms = 0;
-    //Habilitar semaforo EVENT_20MS
-    //schedSignalSemInt(EVENT_20MS);
-  }
-  else{
-    contInt20ms++;
-    if(contInt10ms >=10){
-      contInt10ms = 0;
-      //Habilitar semaforo EVENT_10MS
-      //schedSignalSemInt(EVENT_10MS);
-    }
-    else{
-      contInt10ms++;
-      if(contInt4ms >= 4){
-        contInt4ms = 0;
-        //Habilitar semafor EVENT_4MS
-        //schedSignalSemInt(EVENT_4MS);
-      }
-      else{
-        if (contInt1ms >= 1){
-          contInt1ms =0;
-          //Habilitar semaforo EVENT_1MS
-         // schedSignalSemInt(EVENT_1MS);
-        }
-          else{
-            contInt1ms++;
-          }
-      }
-    }
-  }
-  
+__interrupt void lowTimerIntHook(void)
+{
+    timeCount++;
 }
 
 #pragma vector = PORT1_VECTOR
@@ -126,21 +96,23 @@ __interrupt void port1IntHook (void)
 {
   if (BUT1_PIFG & BUTTON1)
   {
-    if (!button1Fg)                                     //Primera vez que se presiona
+    if (schedTaskState(TCBP_TASK_PROCESAR_TESTM) == sch_destroyed) schedTaskStart(TCBP_TASK_PROCESAR_SALIDA);        //comienzo tarea
+    if ((!button1Fg) && (schedTaskState(TCBP_TASK_PROCESAR_TESTM) == sch_destroyed))                                     //Primera vez que se presiona
     {
-      button1Fg=HIGH;
-      schedTaskStart(TCBP_TASK_PROCESAR_SALIDA);        //crear la tarea
-      //schedSignalSemInt(); //Despierto tarea Procesar_salida
+      if ((timeCount - lastTime) >= DEBOUNCE) lastTime = timeCount;
+          button1Fg=HIGH;     
     }
+    
+    //else {      button1Fg = LOW;}                      //Resetear variables buttonXFg
     BUT1_PIFG &=~BUTTON1;
   }
   if (BUT2_PIFG & BUTTON2)
   {
-    if (!button2Fg)
+    if (schedTaskState(TCBP_TASK_PROCESAR_TESTM) == sch_destroyed) schedTaskStart(TCBP_TASK_PROCESAR_SALIDA);
+    if ((!button2Fg) && (schedTaskState(TCBP_TASK_PROCESAR_TESTM) == sch_destroyed))
     {
+      if ((timeCount - lastTime) >= DEBOUNCE) lastTime = timeCount;
       button2Fg=HIGH;
-      schedTaskStart(TCBP_TASK_PROCESAR_SALIDA); 
-      //schedSignalSemInt(); //Despierto tarea Procesar_salida
     }
     BUT1_PIFG &=~BUTTON2;
   }
@@ -151,21 +123,22 @@ __interrupt void port2IntHook (void)
 {
     if (BUT3_PIFG & BUTTON3)
   {
-    if (!button3Fg)
+    if (schedTaskState(TCBP_TASK_PROCESAR_TESTM) == sch_destroyed) schedTaskStart(TCBP_TASK_PROCESAR_SALIDA);
+    if ((!button3Fg) && (schedTaskState(TCBP_TASK_PROCESAR_TESTM) == sch_destroyed))
     {
       button3Fg=HIGH;
-      schedTaskStart(TCBP_TASK_PROCESAR_SALIDA); 
-      //schedSignalSemInt(); //Despierto tarea Procesar_salida
+      if ((timeCount - lastTime) >= DEBOUNCE) lastTime = timeCount;
     }
     BUT3_PIFG &=~BUTTON3;
   }
   if (BUT4_PIFG & BUTTON4)
   {
+    if (schedTaskState(TCBP_TASK_PROCESAR_TESTM) == sch_running) {schedTaskDestroy(TCBP_TASK_PROCESAR_TESTM);}
+    else { schedTaskStart(TCBP_TASK_PROCESAR_SALIDA);}
     if (!button4Fg)
     {
       button4Fg=HIGH;
-      schedTaskStart(TCBP_TASK_PROCESAR_SALIDA); 
-      //schedSignalSemInt(); //Despierto tarea Procesar_salida
+      if ((timeCount - lastTime) >= DEBOUNCE) lastTime = timeCount;
     }
     BUT4_PIFG &=~BUTTON4;
   } 
@@ -173,38 +146,9 @@ __interrupt void port2IntHook (void)
 
 void vTaskLed( stepType *step )
 {
-    /*Example Task with a 100ms delay an a signaling of a semaphore*/
-//    schedSignalSem(ECBP_TASK_DONE);
     vLedToggle();
-    schedDelay(2000);
-    
+    schedDelay(delayLedTicks);
 }
-
-
-/*
-void vTaskLcdConf( stepType *step )
-{
-  //This task configures the LCD display one time 
-  //schedDelay(1000);
-  lcd_init ();
-//  lcdConfInit();
-  schedSignalSem(ECBP_TASK_DONE);
-  schedTaskCurrDestroy();  
-}
-void vTaskLcdPrint( stepType *step){
-  schedWait(5000, ECBP_TASK_DONE);
-  lcd_cmd(0x80);
-  display_line("ABCDEFGHIJKMNLOP");
-  
-//  lcdPrint("ABCDEFGHIJKMNLOP");
-//  schedDelay(2000);
-//  lcdGotoXy(0,1);
-//  lcdPrint(" 1");
-//  schedDelay(2000);
-//  lcdPrint(" 2");
-  schedTaskCurrDestroy();
-}
-*/
 
 /**************************************
 Tarea que incrementa o decrementa frecuencia, imprime
@@ -213,37 +157,70 @@ salida de los valores actuales
 ***************************************/
 void vTaskProcesarSalida( stepType *step )
 {
-    if (button1Fg)
+  delayLedTicks = 2000;
+
+      if (button1Fg && button3Fg && ((timeCount - lastTime) >= DEBOUNCE) ) 
     {
-    //Si activo - dormir tarea por xx tiempo de antirrebote o ver la forma medir tiempo e incrementar variables
+      button1Fg = LOW;
+      button3Fg = LOW;
+      schedTaskCreate(vTaskProcesarTestMode,TCBP_TASK_PROCESAR_TESTM);
+      schedTaskCurrStop();
+    }
+    if (button1Fg && ((timeCount - lastTime) >= DEBOUNCE))
+    {
+      button1Fg = LOW;
       FrecMHz++;
       if (FrecMHz >= 150) FrecMHz=150;
     }
-    if (button2Fg)
+    if (button2Fg && ((timeCount - lastTime) >= DEBOUNCE))
     {
-    //Si activo - dormir tarea por xx tiempo de antirrebote o ver la forma medir tiempo e incrementar variables
+
+      button2Fg = LOW;
       FrecMHz--;
       if (FrecMHz <= 116) FrecMHz=116;
     }
-    if (button3Fg)
+    if (button3Fg && ((timeCount - lastTime) >= DEBOUNCE))
     {
-    //Si activo - dormir tarea por xx tiempo de antirrebote o ver la forma medir tiempo e incrementar variables
+
+      button3Fg = LOW;
       FrecKHz = FrecKHz + 25;   /* Ingrementamos frecuencia con un paso de 25*/
       if (FrecKHz > 975) FrecKHz = 0; 
     }
-    if (button4Fg)
+    if (button4Fg && ((timeCount - lastTime) >= DEBOUNCE))
     {
-    //Si activo - dormir tarea por xx tiempo de antirrebote o ver la forma medir tiempo e incrementar variables
+      button4Fg = LOW;
       FrecKHz = FrecKHz - 25;   /* Decrementamos frecuencia con un paso de 25 */
       if (FrecKHz < 0) FrecKHz = 975;
     }
-    printFrecu(FrecMHz,FrecKHz);        //Imprimo en pantalla valores
 
     shiftRegPutFrecu(FrecMHz,FrecKHz);  //Dar salida de valores
-    
-    button1Fg = 0;                      //Resetear variables buttonXFg
-    button2Fg = 0;
-    button3Fg = 0;
-    button4Fg = 0;
+    printFrecu(FrecMHz,FrecKHz);        //Imprimo en pantalla valores
     schedTaskCurrStop();
+}
+
+/*
+
+*/
+
+void vTaskProcesarTestMode( stepType *step )
+{
+  button1Fg = LOW;                      //Resetear variables buttonXFg
+  button2Fg = LOW;
+  button3Fg = LOW;
+  button4Fg = LOW;
+  if (button4Fg && ((timeCount - lastTime) >= DEBOUNCE)) schedTaskCurrDestroy();
+  
+  delayLedTicks = 250; // Modifico tiempo de blink para indicar que estoy en modo test
+  shiftRegWrite2Byte(0x0000);
+  schedDelay(1000);
+  shiftRegWrite2Byte(0xffff);
+  schedDelay(1000);
+  
+  gotoXy(0,0);
+  prints("** Test ");
+  gotoXy(0,1);
+  prints("Mode ** ");
+  shiftRegTest();
+
+
 }

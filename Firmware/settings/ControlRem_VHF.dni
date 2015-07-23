@@ -46,7 +46,7 @@ Counter0=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 [EEM Cycle Counter 1]
 Counter1=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 [DebugChecksum]
-Checksum=-1479520138
+Checksum=1869054179
 [CallStack]
 ShowArgs=0
 [Disassembly]
@@ -70,7 +70,7 @@ Extended Clock Control Enable=1
 Advanced Extended Clock Control=0
 Emulation mode=0
 Free running=0
-Shutting Down=3
+Shutting Down=1
 [Memory Dump]
 Start address=
 Lenghth=

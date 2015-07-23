@@ -1,0 +1,397 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>Control Remoto VHF-20A: Referencia del Archivo modules/lcd3.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo_f_blanco - chico.jpg"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Control Remoto VHF-20A
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Control remoto para equipo tranceptor de VHF</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&#160;de&#160;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Globales</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('lcd3_8h.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">'defines'</a> &#124;
+<a href="#func-members">Funciones</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia del Archivo lcd3.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><a href="lcd3_8h_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+'defines'</h2></td></tr>
+<tr class="memitem:a99ca1557c30026bb94930812d22488d6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd3_8h.html#a99ca1557c30026bb94930812d22488d6">lcdPortDataOut</a>(x)&#160;&#160;&#160;<a class="el" href="_control_rem_v_h_f__cfg_8h.html#ae90db484d7a404d20e192217356893a8">LCD_POUT2</a> &amp;=~(<a class="el" href="_control_rem_v_h_f__cfg_8h.html#a3d9bb178282c3cb69740c94ba1e48fed">D4</a>+<a class="el" href="_control_rem_v_h_f__cfg_8h.html#a2ddd4183d444d6d128cbdbd6269e4e0c">D5</a>); <a class="el" href="_control_rem_v_h_f__cfg_8h.html#a629931f1184110a6d29b16c295fc6a9b">LCD_POUT1</a> &amp;=~(<a class="el" href="_control_rem_v_h_f__cfg_8h.html#a79a18a7f5ccf7a7ca31f302bd62527a6">D6</a>+<a class="el" href="_control_rem_v_h_f__cfg_8h.html#a2ba78f059a7ebebc95e7beef690e88d6">D7</a>); <a class="el" href="_control_rem_v_h_f__cfg_8h.html#ae90db484d7a404d20e192217356893a8">LCD_POUT2</a> |= ((x &amp; 0x01)&lt;&lt; 4) + ((x &amp; 0x02)&lt;&lt; 4); LCD_POUT1 |= ((x &amp; 0x04)&lt;&lt;1) + ((x &amp; 0x08)&gt;&gt; 1);</td></tr>
+<tr class="separator:a99ca1557c30026bb94930812d22488d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9509689578cf3b25b3f8b39ae434f621"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd3_8h.html#a9509689578cf3b25b3f8b39ae434f621">lcdENOn</a>()&#160;&#160;&#160;<a class="el" href="_control_rem_v_h_f__cfg_8h.html#a09055d74e36019ab11366bc27ac00458">PORT_EN</a> |= <a class="el" href="_control_rem_v_h_f__cfg_8h.html#a22e6626f2c98ed902f8ded47f6438c05">EN</a></td></tr>
+<tr class="separator:a9509689578cf3b25b3f8b39ae434f621"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a359fadd01141291561607fa0db7363f0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd3_8h.html#a359fadd01141291561607fa0db7363f0">lcdENOff</a>()&#160;&#160;&#160;<a class="el" href="_control_rem_v_h_f__cfg_8h.html#a09055d74e36019ab11366bc27ac00458">PORT_EN</a> &amp;= ~<a class="el" href="_control_rem_v_h_f__cfg_8h.html#a22e6626f2c98ed902f8ded47f6438c05">EN</a></td></tr>
+<tr class="separator:a359fadd01141291561607fa0db7363f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fb1de22b4ddfa2311a5c7f885873e9d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd3_8h.html#a1fb1de22b4ddfa2311a5c7f885873e9d">lcdRSOn</a>()&#160;&#160;&#160;<a class="el" href="_control_rem_v_h_f__cfg_8h.html#a83ba5da5230c38fe999e96c634b9671f">PORT_RS</a> |= <a class="el" href="_control_rem_v_h_f__cfg_8h.html#af8903d8eea3868940c60af887473b152">RS</a></td></tr>
+<tr class="separator:a1fb1de22b4ddfa2311a5c7f885873e9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c76e09dc4868bb253265da614659c4c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd3_8h.html#a1c76e09dc4868bb253265da614659c4c">lcdRSOff</a>()&#160;&#160;&#160;<a class="el" href="_control_rem_v_h_f__cfg_8h.html#a83ba5da5230c38fe999e96c634b9671f">PORT_RS</a> &amp;= ~<a class="el" href="_control_rem_v_h_f__cfg_8h.html#af8903d8eea3868940c60af887473b152">RS</a></td></tr>
+<tr class="separator:a1c76e09dc4868bb253265da614659c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae73ec37125355edfb6d59ccaa2757f5f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd3_8h.html#ae73ec37125355edfb6d59ccaa2757f5f">lcd_port_dir_conf</a>()&#160;&#160;&#160;<a class="el" href="_control_rem_v_h_f__cfg_8h.html#a1c0b1d8d8f810220e71594d8127cc82b">LCD_PDIR1</a> |=(<a class="el" href="_control_rem_v_h_f__cfg_8h.html#a2ba78f059a7ebebc95e7beef690e88d6">D7</a> + <a class="el" href="_control_rem_v_h_f__cfg_8h.html#a79a18a7f5ccf7a7ca31f302bd62527a6">D6</a>); <a class="el" href="_control_rem_v_h_f__cfg_8h.html#adb484f9e98a2a9c5afa2e025f19eeeea">LCD_PDIR2</a> |=(<a class="el" href="_control_rem_v_h_f__cfg_8h.html#a3d9bb178282c3cb69740c94ba1e48fed">D4</a> + <a class="el" href="_control_rem_v_h_f__cfg_8h.html#a2ddd4183d444d6d128cbdbd6269e4e0c">D5</a> + <a class="el" href="_control_rem_v_h_f__cfg_8h.html#af8903d8eea3868940c60af887473b152">RS</a> + <a class="el" href="_control_rem_v_h_f__cfg_8h.html#a22e6626f2c98ed902f8ded47f6438c05">EN</a>)</td></tr>
+<tr class="separator:ae73ec37125355edfb6d59ccaa2757f5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:ab881cea2f380a7bc550f3fac7c7008cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd3_8h.html#ab881cea2f380a7bc550f3fac7c7008cb">waitlcd</a> (unsigned int x)</td></tr>
+<tr class="separator:ab881cea2f380a7bc550f3fac7c7008cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecaa9ab68490a0b8dedd20d200d5d0ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd3_8h.html#aecaa9ab68490a0b8dedd20d200d5d0ef">lcdInit</a> (void)</td></tr>
+<tr class="separator:aecaa9ab68490a0b8dedd20d200d5d0ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5db9b84d0758aecf12ad619a4f18bb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd3_8h.html#ae5db9b84d0758aecf12ad619a4f18bb2">integerToAscii</a> (unsigned int integer, char *character)</td></tr>
+<tr class="separator:ae5db9b84d0758aecf12ad619a4f18bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b2f609d01d01270b03c365e08d46e1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd3_8h.html#a7b2f609d01d01270b03c365e08d46e1c">lcdData</a> (unsigned char l)</td></tr>
+<tr class="separator:a7b2f609d01d01270b03c365e08d46e1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26a9170a468deb6a4d3e47a5b72a1e43"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd3_8h.html#a26a9170a468deb6a4d3e47a5b72a1e43">prints</a> (char *s)</td></tr>
+<tr class="separator:a26a9170a468deb6a4d3e47a5b72a1e43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab78522cc1f34a13a7bb547cc57b62ceb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd3_8h.html#ab78522cc1f34a13a7bb547cc57b62ceb">gotoXy</a> (unsigned char x, unsigned char y)</td></tr>
+<tr class="separator:ab78522cc1f34a13a7bb547cc57b62ceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49ce9455ec1d3caedc7420d0b7c223da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd3_8h.html#a49ce9455ec1d3caedc7420d0b7c223da">printFrecu</a> (unsigned int, unsigned int)</td></tr>
+<tr class="separator:a49ce9455ec1d3caedc7420d0b7c223da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de los 'defines'</h2>
+<a class="anchor" id="ae73ec37125355edfb6d59ccaa2757f5f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define lcd_port_dir_conf</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="_control_rem_v_h_f__cfg_8h.html#a1c0b1d8d8f810220e71594d8127cc82b">LCD_PDIR1</a> |=(<a class="el" href="_control_rem_v_h_f__cfg_8h.html#a2ba78f059a7ebebc95e7beef690e88d6">D7</a> + <a class="el" href="_control_rem_v_h_f__cfg_8h.html#a79a18a7f5ccf7a7ca31f302bd62527a6">D6</a>); <a class="el" href="_control_rem_v_h_f__cfg_8h.html#adb484f9e98a2a9c5afa2e025f19eeeea">LCD_PDIR2</a> |=(<a class="el" href="_control_rem_v_h_f__cfg_8h.html#a3d9bb178282c3cb69740c94ba1e48fed">D4</a> + <a class="el" href="_control_rem_v_h_f__cfg_8h.html#a2ddd4183d444d6d128cbdbd6269e4e0c">D5</a> + <a class="el" href="_control_rem_v_h_f__cfg_8h.html#af8903d8eea3868940c60af887473b152">RS</a> + <a class="el" href="_control_rem_v_h_f__cfg_8h.html#a22e6626f2c98ed902f8ded47f6438c05">EN</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a359fadd01141291561607fa0db7363f0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define lcdENOff</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="_control_rem_v_h_f__cfg_8h.html#a09055d74e36019ab11366bc27ac00458">PORT_EN</a> &amp;= ~<a class="el" href="_control_rem_v_h_f__cfg_8h.html#a22e6626f2c98ed902f8ded47f6438c05">EN</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9509689578cf3b25b3f8b39ae434f621"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define lcdENOn</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="_control_rem_v_h_f__cfg_8h.html#a09055d74e36019ab11366bc27ac00458">PORT_EN</a> |= <a class="el" href="_control_rem_v_h_f__cfg_8h.html#a22e6626f2c98ed902f8ded47f6438c05">EN</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a99ca1557c30026bb94930812d22488d6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define lcdPortDataOut</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="_control_rem_v_h_f__cfg_8h.html#ae90db484d7a404d20e192217356893a8">LCD_POUT2</a> &amp;=~(<a class="el" href="_control_rem_v_h_f__cfg_8h.html#a3d9bb178282c3cb69740c94ba1e48fed">D4</a>+<a class="el" href="_control_rem_v_h_f__cfg_8h.html#a2ddd4183d444d6d128cbdbd6269e4e0c">D5</a>); <a class="el" href="_control_rem_v_h_f__cfg_8h.html#a629931f1184110a6d29b16c295fc6a9b">LCD_POUT1</a> &amp;=~(<a class="el" href="_control_rem_v_h_f__cfg_8h.html#a79a18a7f5ccf7a7ca31f302bd62527a6">D6</a>+<a class="el" href="_control_rem_v_h_f__cfg_8h.html#a2ba78f059a7ebebc95e7beef690e88d6">D7</a>); <a class="el" href="_control_rem_v_h_f__cfg_8h.html#ae90db484d7a404d20e192217356893a8">LCD_POUT2</a> |= ((x &amp; 0x01)&lt;&lt; 4) + ((x &amp; 0x02)&lt;&lt; 4); LCD_POUT1 |= ((x &amp; 0x04)&lt;&lt;1) + ((x &amp; 0x08)&gt;&gt; 1);</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1c76e09dc4868bb253265da614659c4c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define lcdRSOff</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="_control_rem_v_h_f__cfg_8h.html#a83ba5da5230c38fe999e96c634b9671f">PORT_RS</a> &amp;= ~<a class="el" href="_control_rem_v_h_f__cfg_8h.html#af8903d8eea3868940c60af887473b152">RS</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1fb1de22b4ddfa2311a5c7f885873e9d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define lcdRSOn</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="_control_rem_v_h_f__cfg_8h.html#a83ba5da5230c38fe999e96c634b9671f">PORT_RS</a> |= <a class="el" href="_control_rem_v_h_f__cfg_8h.html#af8903d8eea3868940c60af887473b152">RS</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones</h2>
+<a class="anchor" id="ab78522cc1f34a13a7bb547cc57b62ceb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gotoXy </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae5db9b84d0758aecf12ad619a4f18bb2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void integerToAscii </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>integer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>character</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7b2f609d01d01270b03c365e08d46e1c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lcdData </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>l</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aecaa9ab68490a0b8dedd20d200d5d0ef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lcdInit </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a49ce9455ec1d3caedc7420d0b7c223da"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printFrecu </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>int</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>int</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a26a9170a468deb6a4d3e47a5b72a1e43"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int prints </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab881cea2f380a7bc550f3fac7c7008cb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void waitlcd </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e05d7e2b1ecd646af5bb94391405f3b5.html">modules</a></li><li class="navelem"><a class="el" href="lcd3_8h.html">lcd3.h</a></li>
+    <li class="footer">Generado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>Control Remoto VHF-20A: Fichero Fuente sched.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo_f_blanco - chico.jpg"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Control Remoto VHF-20A
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Control remoto para equipo tranceptor de VHF</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&#160;de&#160;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Globales</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('sched_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">sched.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="sched_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*Scheduler header file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">  Scheduler module</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">  Developer: Marcelo Lorenzati</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">  License: GPL v3</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef sched_h__</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define sched_h__</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*Scheduler configuration header files*/</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="sched__cfg_8h.html">sched_cfg.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/*Constants definition*/</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/*Status definition*/</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="sched_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">   15</a></span>&#160;<span class="preprocessor">#define NULL 0u</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifndef ONOFF</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="sched_8h.html#abd29c63ba6e2261d6b3775cddc0e6fbc">   17</a></span>&#160;<span class="preprocessor">#define ONOFF</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="sched_8h.html#ad76d1750a6cdeebd506bfcd6752554d2">   18</a></span>&#160;<span class="preprocessor">#define ON  1u</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="sched_8h.html#a29e413f6725b2ba32d165ffaa35b01e5">   19</a></span>&#160;<span class="preprocessor">#define OFF 0u</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="sched_8h.html#a5bb885982ff66a2e0a0a45a8ee9c35e2">   21</a></span>&#160;<span class="preprocessor">#define HIGH    1u</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="sched_8h.html#a045054247e192cb387ff6126429f8199">   22</a></span>&#160;<span class="preprocessor">#define MID     2u</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="sched_8h.html#ab811d8c6ff3a505312d3276590444289">   23</a></span>&#160;<span class="preprocessor">#define LOW     0u</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">/*By default values*/</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#ifndef SCHED_EVENT_SIZE</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define SCHED_EVENT_SIZE 1</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#ifndef SCHED_DELAY_SIZE</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define SCHED_DELAY_SIZE 1</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#ifndef SCHED_REENTRY</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#define SCHED_REENTRY 0</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#ifndef SCHED_STEP_SIZE</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define SCHED_STEP_SIZE 1</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#ifndef SCHED_PROTECT_LEVEL</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#define SCHED_PROTECT_LEVEL HIGH</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#ifndef SCHED_PRIORITY_LEVELS</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#define SCHED_PRIORITY_LEVELS 0</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">/*typedefs*/</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">/*Event Type definition*/</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#if     SCHED_EVENT_SIZE == 1</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="sched_8h.html#a97187e8e662b9613ed5e98beac453f8e">   55</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="sched_8h.html#a97187e8e662b9613ed5e98beac453f8e">eventType</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="sched_8h.html#a0e62877236bc5f6f38499043c8b97066">   56</a></span>&#160;<span class="preprocessor">#define EVENT_COUNTER_MAX    0xFE</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#elif   SCHED_EVENT_SIZE == 2</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="sched_8h.html#a97187e8e662b9613ed5e98beac453f8e">eventType</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#define EVENT_COUNTER_MAX    0xFFFE</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#error &quot;Only 8 bits and 16 bits event counters allowed&quot;</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">/*Delay Type definition*/</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#if     SCHED_DELAY_SIZE == 1</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="sched_8h.html#a2fa643860fa9826015046d798e519903">delayType</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#define DELAY_COUNTER_MAX    0xFE</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#elif   SCHED_DELAY_SIZE == 2</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="sched_8h.html#a2fa643860fa9826015046d798e519903">   69</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="sched_8h.html#a2fa643860fa9826015046d798e519903">delayType</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="sched_8h.html#abc747785d27f71c926d98d51fad8dce1">   70</a></span>&#160;<span class="preprocessor">#define DELAY_COUNTER_MAX    0xFFFE</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#error &quot;Only 8 bits and 16 bits delay counters allowed&quot;</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">/*Step Type Definition*/</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#if SCHED_STEP_SIZE == 1</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="sched_8h.html#a86213545b1cc3419c04d77f3bfb39300">   77</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="sched_8h.html#a86213545b1cc3419c04d77f3bfb39300">stepType</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#elif   SCHED_STEP_SIZE == 2</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="sched_8h.html#a86213545b1cc3419c04d77f3bfb39300">stepType</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#error &quot;Only 8 bits and 16 bits step counters allowed&quot;</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">/*Other Error Reporting*/</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#if     SCHED_TASK_MAX &lt; 255</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="sched_8h.html#a3a838d680562275d5ad34cf279e56f1f">   87</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="sched_8h.html#a3a838d680562275d5ad34cf279e56f1f">taskCountType</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="sched_8h.html#a3a838d680562275d5ad34cf279e56f1f">taskCountType</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#if     SCHED_EVENT_MAX &lt; 255</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="sched_8h.html#a6e6d5afbaf8c280f02bebbeb036ce3e5">   93</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="sched_8h.html#a6e6d5afbaf8c280f02bebbeb036ce3e5">eventCountType</a>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="sched_8h.html#a6e6d5afbaf8c280f02bebbeb036ce3e5">eventCountType</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#if SCHED_PRIORITY_LEVELS &gt; 0</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#error &quot;Functionality not programmed yet.&quot;</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#if    SCHED_PRIORITY_LEVELS &lt; 255</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="sched_8h.html#accb66029e42dd12f86c225a1c785af26">  103</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="sched_8h.html#accb66029e42dd12f86c225a1c785af26">priorityType</a>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="sched_8h.html#accb66029e42dd12f86c225a1c785af26">priorityType</a>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#if     SCHED_REENTRY &gt; 1</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#error &quot;Only 1(ON) or 0(OFF) allowed for SCHED_REENTRY&quot;</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">/*Typedefs*/</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="sched_8h.html#a1f9f015cd2cdd8ff55d866ff461ed38f">  113</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="sched_8h.html#a1f9f015cd2cdd8ff55d866ff461ed38f">taskPointerType</a>)( <a class="code" href="sched_8h.html#a86213545b1cc3419c04d77f3bfb39300">stepType</a> *step );</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="sched_8h.html#a55f9ada3c2cd607c8eeb53dfbd0aa0b7">  115</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;{</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="sched_8h.html#a55f9ada3c2cd607c8eeb53dfbd0aa0b7a77ecd6a97c1b21e1941129808b8f8d1b">  117</a></span>&#160;    <a class="code" href="sched_8h.html#a55f9ada3c2cd607c8eeb53dfbd0aa0b7a77ecd6a97c1b21e1941129808b8f8d1b">sch_destroyed</a>,</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="sched_8h.html#a55f9ada3c2cd607c8eeb53dfbd0aa0b7a69cdd543d973f4e6f3f3f816e19dcaa0">  118</a></span>&#160;    <a class="code" href="sched_8h.html#a55f9ada3c2cd607c8eeb53dfbd0aa0b7a69cdd543d973f4e6f3f3f816e19dcaa0">sch_stopped</a>,</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="sched_8h.html#a55f9ada3c2cd607c8eeb53dfbd0aa0b7a6c74b5da049dede1d4bd8bd3734e56fe">  119</a></span>&#160;    <a class="code" href="sched_8h.html#a55f9ada3c2cd607c8eeb53dfbd0aa0b7a6c74b5da049dede1d4bd8bd3734e56fe">sch_delayed</a>,</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="sched_8h.html#a55f9ada3c2cd607c8eeb53dfbd0aa0b7af23e38aef486cc8b2161a8199a848a26">  120</a></span>&#160;    <a class="code" href="sched_8h.html#a55f9ada3c2cd607c8eeb53dfbd0aa0b7af23e38aef486cc8b2161a8199a848a26">sch_waiting</a>,</div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="sched_8h.html#a55f9ada3c2cd607c8eeb53dfbd0aa0b7af85e31491e58f642fe6fe16f43408899">  121</a></span>&#160;    <a class="code" href="sched_8h.html#a55f9ada3c2cd607c8eeb53dfbd0aa0b7af85e31491e58f642fe6fe16f43408899">sch_running</a></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<a class="code" href="sched_8h.html#a55f9ada3c2cd607c8eeb53dfbd0aa0b7">statusType</a>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="structtask_type.html">  125</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;{</div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="structtask_type.html#a2cb4f53647ed71b35d68803b3e871d5f">  127</a></span>&#160;    <a class="code" href="sched_8h.html#a1f9f015cd2cdd8ff55d866ff461ed38f">taskPointerType</a> <a class="code" href="structtask_type.html#a2cb4f53647ed71b35d68803b3e871d5f">taskPointer</a>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="structtask_type.html#ad9c23a4743758a1d17f2a45c9d5d9ab6">  128</a></span>&#160;    <a class="code" href="sched_8h.html#a6e6d5afbaf8c280f02bebbeb036ce3e5">eventCountType</a> <a class="code" href="structtask_type.html#ad9c23a4743758a1d17f2a45c9d5d9ab6">eventPointer</a>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="structtask_type.html#a964207f77f648db6bb16bf9d2e61607f">  129</a></span>&#160;    <a class="code" href="sched_8h.html#a2fa643860fa9826015046d798e519903">delayType</a> <a class="code" href="structtask_type.html#a964207f77f648db6bb16bf9d2e61607f">delay</a>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="structtask_type.html#a3c4c085a6d0f0348e01492316696fe8a">  130</a></span>&#160;    <a class="code" href="sched_8h.html#a55f9ada3c2cd607c8eeb53dfbd0aa0b7">statusType</a> <a class="code" href="structtask_type.html#a3c4c085a6d0f0348e01492316696fe8a">status</a>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="structtask_type.html#a5a4dad51dd0f810ebce4b178e1ce899f">  131</a></span>&#160;    <a class="code" href="sched_8h.html#a86213545b1cc3419c04d77f3bfb39300">stepType</a> <a class="code" href="structtask_type.html#a5a4dad51dd0f810ebce4b178e1ce899f">step</a>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">    #if SCHED_PRIORITY_LEVELS &gt; 1</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <a class="code" href="sched_8h.html#accb66029e42dd12f86c225a1c785af26">priorityType</a> priority;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;} <a class="code" href="structtask_type.html">taskType</a>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="structt_sched_data.html">  137</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structt_sched_data.html">tSchedData</a></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;{</div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="structt_sched_data.html#acc80d30b0e81a8b1abd6fcfb13c9e2ab">  139</a></span>&#160;    <span class="keyword">volatile</span> <a class="code" href="sched_8h.html#a97187e8e662b9613ed5e98beac453f8e">eventType</a> <span class="keyword">event</span>[<a class="code" href="sched__cfg_8h.html#aeb620bb218edcfa862c85087b763066a">SCHED_EVENT_MAX</a>];</div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="structt_sched_data.html#a68294070b4b7cae0c435a14f23bfa80a">  140</a></span>&#160;    <a class="code" href="structtask_type.html">taskType</a> <a class="code" href="structt_sched_data.html#a68294070b4b7cae0c435a14f23bfa80a">task</a>[<a class="code" href="sched__cfg_8h.html#aae7890c562a5bbfb88803b6f3e5bb075">SCHED_TASK_MAX</a>];</div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="structt_sched_data.html#abeabc67d47bbe0bfee9acd0cb6ecf6ea">  141</a></span>&#160;    <span class="keyword">volatile</span> <a class="code" href="sched_8h.html#a3a838d680562275d5ad34cf279e56f1f">taskCountType</a> <a class="code" href="structt_sched_data.html#abeabc67d47bbe0bfee9acd0cb6ecf6ea">currentTCB</a>;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;} ;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structt_sched_data.html">tSchedData</a> <a class="code" href="sched_8h.html#a8dc7f849259cb5620d927016669df3a5">sched</a>;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment">/*Methods Declaration*/</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="keywordtype">void</span> <a class="code" href="sched_8h.html#ac48128e72b303ea22d8ec641a9516b15">schedule</a>( <span class="keywordtype">void</span> );</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="keywordtype">void</span> <a class="code" href="sched_8h.html#ad312b4680c1500f60273c1acbec8edbf">schedInit</a>( <span class="keywordtype">void</span> );</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="keywordtype">char</span> <a class="code" href="sched_8h.html#a59d7dfa7d08b2df8aa3e0f5ba58d6a8b">schedSignalSem</a>( <a class="code" href="sched_8h.html#a97187e8e662b9613ed5e98beac453f8e">eventType</a> <a class="code" href="structt_sched_data.html#acc80d30b0e81a8b1abd6fcfb13c9e2ab">event</a> );</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="keywordtype">char</span> <a class="code" href="sched_8h.html#a4f96bed14003d8a0ae6af3265ed32c19">schedWait</a>( <a class="code" href="sched_8h.html#a2fa643860fa9826015046d798e519903">delayType</a> delay, <a class="code" href="sched_8h.html#a97187e8e662b9613ed5e98beac453f8e">eventType</a> <a class="code" href="structt_sched_data.html#acc80d30b0e81a8b1abd6fcfb13c9e2ab">event</a> );</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="keywordtype">char</span> <a class="code" href="sched_8h.html#a241c8ff78e0ffbf1b287bdb6ef1151ad">schedTry</a>( <a class="code" href="sched_8h.html#a97187e8e662b9613ed5e98beac453f8e">eventType</a> <a class="code" href="structt_sched_data.html#acc80d30b0e81a8b1abd6fcfb13c9e2ab">event</a> );</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="keywordtype">void</span> <a class="code" href="sched_8h.html#a1e909e3e4e9dd8d0ace2f913adb15a6d">schedTaskReCreate</a>( <a class="code" href="sched_8h.html#a1f9f015cd2cdd8ff55d866ff461ed38f">taskPointerType</a> <a class="code" href="structt_sched_data.html#a68294070b4b7cae0c435a14f23bfa80a">task</a>, <a class="code" href="sched_8h.html#a3a838d680562275d5ad34cf279e56f1f">taskCountType</a> TaskNo );</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="keywordtype">char</span> <a class="code" href="sched_8h.html#a0544a8e683f7d014b4e10efb87f01769">schedTaskCreate</a>( <a class="code" href="sched_8h.html#a1f9f015cd2cdd8ff55d866ff461ed38f">taskPointerType</a> <a class="code" href="structt_sched_data.html#a68294070b4b7cae0c435a14f23bfa80a">task</a>, <a class="code" href="sched_8h.html#a3a838d680562275d5ad34cf279e56f1f">taskCountType</a> TaskNo );</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment">/*Macro definitions*/</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="sched_8h.html#a0c3c6cf448ff3a5456f24970585d90bc">  156</a></span>&#160;<span class="preprocessor">#define intEnablePriority(x) //IPEN = x //VER ADAPTAR TODOS ESTOOs!!!!!!!</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="sched_8h.html#af164c894647e5b7a0979a8dbe9709f07">  157</a></span>&#160;<span class="preprocessor">#define intLowEnable(x) //PEIE = x</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="sched_8h.html#a14a5cf36e656d6f38bbd0f2f7ada69ea">  158</a></span>&#160;<span class="preprocessor">#define intHighEnable(x) //GIE = x</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment">/*Interrupt protection Level*/</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="preprocessor">#if SCHED_PROTECT_LEVEL == HIGH</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor">    #define intProtectTick()        intHighEnable(OFF);intLowEnable(OFF)</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor">    #define intProtectSem()         intLowEnable(OFF);intHighEnable(OFF)</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">    #define intUnProtectTick()      intHighEnable(ON);intLowEnable(ON)</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">    #define intUnProtectSem()       intLowEnable(ON);intHighEnable(ON)</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor">    #define intProtectLowInt()      intHighEnable(OFF)</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">    #define intUnProtectLowInt()    intHighEnable(ON)</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">#elif SCHED_PROTECT_LEVEL == MID</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="preprocessor">    #define intProtectTick()        intHighEnable(OFF);intLowEnable(OFF)</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor">    #define intProtectSem()         intLowEnable(OFF);intHighEnable(OFF)</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor">    #define intUnProtectTick()      intHighEnable(ON);intLowEnable(ON)</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">    #define intUnProtectSem()       intLowEnable(ON);intHighEnable(ON)</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">    #define intProtectLowInt()  </span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor">    #define intUnProtectLowInt()</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor">#elif SCHED_PROTECT_LEVEL == LOW</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="sched_8h.html#afae30a4cc50ae7e995031f06848646f6">  176</a></span>&#160;<span class="preprocessor">    #define intProtectTick()        intHighEnable(OFF)</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="sched_8h.html#aedfaaea9f974e3b17c78a70c85417ccb">  177</a></span>&#160;<span class="preprocessor">    #define intProtectSem()         intLowEnable(OFF)</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="sched_8h.html#a5515931496564215919e5ec904ad556a">  178</a></span>&#160;<span class="preprocessor">    #define intUnProtectTick()      intHighEnable(ON)</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="sched_8h.html#ac278e221fbe09feaaa784e2ad5c03e66">  179</a></span>&#160;<span class="preprocessor">    #define intUnProtectSem()       intLowEnable(ON)</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="sched_8h.html#a257aa68c11d11ce4596c80e66f76596e">  180</a></span>&#160;<span class="preprocessor">    #define intProtectLowInt()</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="sched_8h.html#a54685ab88f5ab88d055c1f929d25d0aa">  181</a></span>&#160;<span class="preprocessor">    #define intUnProtectLowInt()</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor">    #error &quot;Only HIGH and LOW level of interrupt protection&quot;</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  <span class="comment">// Stop watchdog timer to prevent time out reset</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="comment">//#define clrwdt()    asm(&quot;clrwdt&quot;)</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="sched_8h.html#a79ed2e9a82502ab017664dd92d9dea35">  190</a></span>&#160;<span class="preprocessor">#define clrwdt() WDTCTL = WDTPW + WDTCNTCL;</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="sched_8h.html#a5b2b4c622d2ca6bbc15086bd4ce9bf16">  191</a></span>&#160;<span class="preprocessor">#define enableWatchdog(x)   if(x==OFF) { WDTCTL = WDTPW + WDTHOLD; } //Esto est� mal configurado</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno"><a class="line" href="sched_8h.html#ae001f218cfb426fefd4c1aa5299012df">  192</a></span>&#160;<span class="preprocessor">#define schedStep(ctx)  do { *step = ctx; } while (0)</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="sched_8h.html#a7edd69bf01fdf546b364710a878a758c">  193</a></span>&#160;<span class="preprocessor">#define schedDelay(time)\</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="preprocessor">do { sched.task[sched.currentTCB].delay = time; sched.task[sched.currentTCB].status = sch_delayed; } while (0)</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="sched_8h.html#ab7115cb991a688b060deddb5196eb017">  195</a></span>&#160;<span class="preprocessor">#define schedSignalTimeout()    (sched.task[sched.currentTCB].delay == 0)</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno"><a class="line" href="sched_8h.html#a95712d9164d9ebf1e47cd6c6fed07129">  196</a></span>&#160;<span class="preprocessor">#define schedGetDelay(TaskNo)  sched.task[TaskNo - 1].delay</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="sched_8h.html#a84bf6a7bff278403372127dfdd904a5b">  197</a></span>&#160;<span class="preprocessor">#define schedGetCurrDelay()    sched.task[sched.currentTCB].delay</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno"><a class="line" href="sched_8h.html#a7a8e874bde4368a146e99b066dae8aa2">  198</a></span>&#160;<span class="preprocessor">#define schedEventInit(eventNo, state)   sched.event[eventNo - 1] = state</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="sched_8h.html#ae44995867a50222f84d736ffc1b2c53b">  199</a></span>&#160;<span class="preprocessor">#define schedTaskStop(TaskNo) sched.task[TaskNo - 1].status = sch_stopped</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno"><a class="line" href="sched_8h.html#a80b29361ee7b0603777c6ab7b34c662a">  200</a></span>&#160;<span class="preprocessor">#define schedTaskCurrStop() sched.task[sched.currentTCB].status = sch_stopped</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="sched_8h.html#a58b4d9c26084ffeb162d09fd72efb965">  201</a></span>&#160;<span class="preprocessor">#define schedTaskStart(TaskNo)    sched.task[TaskNo - 1].status = sch_running</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="sched_8h.html#a1a7a4e3169f4bba1da5ac2f5298fb1c9">  202</a></span>&#160;<span class="preprocessor">#define schedTaskCurrDestroy() sched.task[sched.currentTCB].status = sch_destroyed; sched.task[sched.currentTCB].taskPointer = NULL</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno"><a class="line" href="sched_8h.html#ab7f4e6d3e3f3ce8967c48b611c651ac8">  203</a></span>&#160;<span class="preprocessor">#define schedTaskDestroy(TaskNo) sched.task[TaskNo - 1].status = sch_destroyed; sched.task[TaskNo - 1].taskPointer = NULL</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno"><a class="line" href="sched_8h.html#ad26c2da05ee124cd8e9c88390063ab93">  204</a></span>&#160;<span class="preprocessor">#define schedTaskState(TaskNo) sched.task[TaskNo - 1].status</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="sched_8h.html#acdf600ebd8c06adf48cab5ba60470916">  205</a></span>&#160;<span class="preprocessor">#define schedSignalSemInt(eventNo)\</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="preprocessor">do {\</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="preprocessor">    intProtectLowInt();\</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="preprocessor">    if (sched.event[eventNo - 1] &lt;= EVENT_COUNTER_MAX)\</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="preprocessor">    {\</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="preprocessor">         (sched.event[eventNo - 1])++;\</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="preprocessor">    }\</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="preprocessor">    intUnProtectLowInt();\</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="preprocessor">} while (0)</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="preprocessor">#endif // sched_h__</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
+<div class="ttc" id="sched_8h_html_a0544a8e683f7d014b4e10efb87f01769"><div class="ttname"><a href="sched_8h.html#a0544a8e683f7d014b4e10efb87f01769">schedTaskCreate</a></div><div class="ttdeci">char schedTaskCreate(taskPointerType task, taskCountType TaskNo)</div><div class="ttdef"><b>Definition:</b> sched.c:167</div></div>
+<div class="ttc" id="sched_8h_html_a55f9ada3c2cd607c8eeb53dfbd0aa0b7a77ecd6a97c1b21e1941129808b8f8d1b"><div class="ttname"><a href="sched_8h.html#a55f9ada3c2cd607c8eeb53dfbd0aa0b7a77ecd6a97c1b21e1941129808b8f8d1b">sch_destroyed</a></div><div class="ttdef"><b>Definition:</b> sched.h:117</div></div>
+<div class="ttc" id="structt_sched_data_html"><div class="ttname"><a href="structt_sched_data.html">tSchedData</a></div><div class="ttdef"><b>Definition:</b> sched.h:137</div></div>
+<div class="ttc" id="sched_8h_html_a8dc7f849259cb5620d927016669df3a5"><div class="ttname"><a href="sched_8h.html#a8dc7f849259cb5620d927016669df3a5">sched</a></div><div class="ttdeci">struct tSchedData sched</div><div class="ttdef"><b>Definition:</b> sched.c:16</div></div>
+<div class="ttc" id="sched__cfg_8h_html"><div class="ttname"><a href="sched__cfg_8h.html">sched_cfg.h</a></div></div>
+<div class="ttc" id="structtask_type_html_a3c4c085a6d0f0348e01492316696fe8a"><div class="ttname"><a href="structtask_type.html#a3c4c085a6d0f0348e01492316696fe8a">taskType::status</a></div><div class="ttdeci">statusType status</div><div class="ttdef"><b>Definition:</b> sched.h:130</div></div>
+<div class="ttc" id="sched_8h_html_a55f9ada3c2cd607c8eeb53dfbd0aa0b7af23e38aef486cc8b2161a8199a848a26"><div class="ttname"><a href="sched_8h.html#a55f9ada3c2cd607c8eeb53dfbd0aa0b7af23e38aef486cc8b2161a8199a848a26">sch_waiting</a></div><div class="ttdef"><b>Definition:</b> sched.h:120</div></div>
+<div class="ttc" id="structtask_type_html_a2cb4f53647ed71b35d68803b3e871d5f"><div class="ttname"><a href="structtask_type.html#a2cb4f53647ed71b35d68803b3e871d5f">taskType::taskPointer</a></div><div class="ttdeci">taskPointerType taskPointer</div><div class="ttdef"><b>Definition:</b> sched.h:127</div></div>
+<div class="ttc" id="sched__cfg_8h_html_aae7890c562a5bbfb88803b6f3e5bb075"><div class="ttname"><a href="sched__cfg_8h.html#aae7890c562a5bbfb88803b6f3e5bb075">SCHED_TASK_MAX</a></div><div class="ttdeci">#define SCHED_TASK_MAX</div><div class="ttdef"><b>Definition:</b> sched_cfg.h:7</div></div>
+<div class="ttc" id="structtask_type_html_ad9c23a4743758a1d17f2a45c9d5d9ab6"><div class="ttname"><a href="structtask_type.html#ad9c23a4743758a1d17f2a45c9d5d9ab6">taskType::eventPointer</a></div><div class="ttdeci">eventCountType eventPointer</div><div class="ttdef"><b>Definition:</b> sched.h:128</div></div>
+<div class="ttc" id="sched_8h_html_a55f9ada3c2cd607c8eeb53dfbd0aa0b7a6c74b5da049dede1d4bd8bd3734e56fe"><div class="ttname"><a href="sched_8h.html#a55f9ada3c2cd607c8eeb53dfbd0aa0b7a6c74b5da049dede1d4bd8bd3734e56fe">sch_delayed</a></div><div class="ttdef"><b>Definition:</b> sched.h:119</div></div>
+<div class="ttc" id="structtask_type_html_a964207f77f648db6bb16bf9d2e61607f"><div class="ttname"><a href="structtask_type.html#a964207f77f648db6bb16bf9d2e61607f">taskType::delay</a></div><div class="ttdeci">delayType delay</div><div class="ttdef"><b>Definition:</b> sched.h:129</div></div>
+<div class="ttc" id="structtask_type_html"><div class="ttname"><a href="structtask_type.html">taskType</a></div><div class="ttdef"><b>Definition:</b> sched.h:125</div></div>
+<div class="ttc" id="structt_sched_data_html_a68294070b4b7cae0c435a14f23bfa80a"><div class="ttname"><a href="structt_sched_data.html#a68294070b4b7cae0c435a14f23bfa80a">tSchedData::task</a></div><div class="ttdeci">taskType task[SCHED_TASK_MAX]</div><div class="ttdef"><b>Definition:</b> sched.h:140</div></div>
+<div class="ttc" id="sched_8h_html_a1f9f015cd2cdd8ff55d866ff461ed38f"><div class="ttname"><a href="sched_8h.html#a1f9f015cd2cdd8ff55d866ff461ed38f">taskPointerType</a></div><div class="ttdeci">void(* taskPointerType)(stepType *step)</div><div class="ttdef"><b>Definition:</b> sched.h:113</div></div>
+<div class="ttc" id="sched__cfg_8h_html_aeb620bb218edcfa862c85087b763066a"><div class="ttname"><a href="sched__cfg_8h.html#aeb620bb218edcfa862c85087b763066a">SCHED_EVENT_MAX</a></div><div class="ttdeci">#define SCHED_EVENT_MAX</div><div class="ttdef"><b>Definition:</b> sched_cfg.h:10</div></div>
+<div class="ttc" id="sched_8h_html_a59d7dfa7d08b2df8aa3e0f5ba58d6a8b"><div class="ttname"><a href="sched_8h.html#a59d7dfa7d08b2df8aa3e0f5ba58d6a8b">schedSignalSem</a></div><div class="ttdeci">char schedSignalSem(eventType event)</div><div class="ttdef"><b>Definition:</b> sched.c:120</div></div>
+<div class="ttc" id="sched_8h_html_a1e909e3e4e9dd8d0ace2f913adb15a6d"><div class="ttname"><a href="sched_8h.html#a1e909e3e4e9dd8d0ace2f913adb15a6d">schedTaskReCreate</a></div><div class="ttdeci">void schedTaskReCreate(taskPointerType task, taskCountType TaskNo)</div><div class="ttdef"><b>Definition:</b> sched.c:177</div></div>
+<div class="ttc" id="sched_8h_html_ad312b4680c1500f60273c1acbec8edbf"><div class="ttname"><a href="sched_8h.html#ad312b4680c1500f60273c1acbec8edbf">schedInit</a></div><div class="ttdeci">void schedInit(void)</div><div class="ttdef"><b>Definition:</b> sched.c:20</div></div>
+<div class="ttc" id="sched_8h_html_a241c8ff78e0ffbf1b287bdb6ef1151ad"><div class="ttname"><a href="sched_8h.html#a241c8ff78e0ffbf1b287bdb6ef1151ad">schedTry</a></div><div class="ttdeci">char schedTry(eventType event)</div><div class="ttdef"><b>Definition:</b> sched.c:154</div></div>
+<div class="ttc" id="sched_8h_html_a6e6d5afbaf8c280f02bebbeb036ce3e5"><div class="ttname"><a href="sched_8h.html#a6e6d5afbaf8c280f02bebbeb036ce3e5">eventCountType</a></div><div class="ttdeci">unsigned char eventCountType</div><div class="ttdef"><b>Definition:</b> sched.h:93</div></div>
+<div class="ttc" id="structt_sched_data_html_acc80d30b0e81a8b1abd6fcfb13c9e2ab"><div class="ttname"><a href="structt_sched_data.html#acc80d30b0e81a8b1abd6fcfb13c9e2ab">tSchedData::event</a></div><div class="ttdeci">volatile eventType event[SCHED_EVENT_MAX]</div><div class="ttdef"><b>Definition:</b> sched.h:139</div></div>
+<div class="ttc" id="sched_8h_html_a4f96bed14003d8a0ae6af3265ed32c19"><div class="ttname"><a href="sched_8h.html#a4f96bed14003d8a0ae6af3265ed32c19">schedWait</a></div><div class="ttdeci">char schedWait(delayType delay, eventType event)</div><div class="ttdef"><b>Definition:</b> sched.c:133</div></div>
+<div class="ttc" id="structtask_type_html_a5a4dad51dd0f810ebce4b178e1ce899f"><div class="ttname"><a href="structtask_type.html#a5a4dad51dd0f810ebce4b178e1ce899f">taskType::step</a></div><div class="ttdeci">stepType step</div><div class="ttdef"><b>Definition:</b> sched.h:131</div></div>
+<div class="ttc" id="sched_8h_html_a55f9ada3c2cd607c8eeb53dfbd0aa0b7af85e31491e58f642fe6fe16f43408899"><div class="ttname"><a href="sched_8h.html#a55f9ada3c2cd607c8eeb53dfbd0aa0b7af85e31491e58f642fe6fe16f43408899">sch_running</a></div><div class="ttdef"><b>Definition:</b> sched.h:121</div></div>
+<div class="ttc" id="sched_8h_html_ac48128e72b303ea22d8ec641a9516b15"><div class="ttname"><a href="sched_8h.html#ac48128e72b303ea22d8ec641a9516b15">schedule</a></div><div class="ttdeci">void schedule(void)</div><div class="ttdef"><b>Definition:</b> sched.c:46</div></div>
+<div class="ttc" id="sched_8h_html_a2fa643860fa9826015046d798e519903"><div class="ttname"><a href="sched_8h.html#a2fa643860fa9826015046d798e519903">delayType</a></div><div class="ttdeci">unsigned int delayType</div><div class="ttdef"><b>Definition:</b> sched.h:69</div></div>
+<div class="ttc" id="sched_8h_html_accb66029e42dd12f86c225a1c785af26"><div class="ttname"><a href="sched_8h.html#accb66029e42dd12f86c225a1c785af26">priorityType</a></div><div class="ttdeci">unsigned char priorityType</div><div class="ttdef"><b>Definition:</b> sched.h:103</div></div>
+<div class="ttc" id="sched_8h_html_a86213545b1cc3419c04d77f3bfb39300"><div class="ttname"><a href="sched_8h.html#a86213545b1cc3419c04d77f3bfb39300">stepType</a></div><div class="ttdeci">unsigned char stepType</div><div class="ttdef"><b>Definition:</b> sched.h:77</div></div>
+<div class="ttc" id="sched_8h_html_a3a838d680562275d5ad34cf279e56f1f"><div class="ttname"><a href="sched_8h.html#a3a838d680562275d5ad34cf279e56f1f">taskCountType</a></div><div class="ttdeci">unsigned char taskCountType</div><div class="ttdef"><b>Definition:</b> sched.h:87</div></div>
+<div class="ttc" id="sched_8h_html_a55f9ada3c2cd607c8eeb53dfbd0aa0b7"><div class="ttname"><a href="sched_8h.html#a55f9ada3c2cd607c8eeb53dfbd0aa0b7">statusType</a></div><div class="ttdeci">statusType</div><div class="ttdef"><b>Definition:</b> sched.h:115</div></div>
+<div class="ttc" id="sched_8h_html_a97187e8e662b9613ed5e98beac453f8e"><div class="ttname"><a href="sched_8h.html#a97187e8e662b9613ed5e98beac453f8e">eventType</a></div><div class="ttdeci">unsigned char eventType</div><div class="ttdef"><b>Definition:</b> sched.h:55</div></div>
+<div class="ttc" id="sched_8h_html_a55f9ada3c2cd607c8eeb53dfbd0aa0b7a69cdd543d973f4e6f3f3f816e19dcaa0"><div class="ttname"><a href="sched_8h.html#a55f9ada3c2cd607c8eeb53dfbd0aa0b7a69cdd543d973f4e6f3f3f816e19dcaa0">sch_stopped</a></div><div class="ttdef"><b>Definition:</b> sched.h:118</div></div>
+<div class="ttc" id="structt_sched_data_html_abeabc67d47bbe0bfee9acd0cb6ecf6ea"><div class="ttname"><a href="structt_sched_data.html#abeabc67d47bbe0bfee9acd0cb6ecf6ea">tSchedData::currentTCB</a></div><div class="ttdeci">volatile taskCountType currentTCB</div><div class="ttdef"><b>Definition:</b> sched.h:141</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="sched_8h.html">sched.h</a></li>
+    <li class="footer">Generado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
+  </ul>
+</div>
+</body>
+</html>

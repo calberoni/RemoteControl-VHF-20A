@@ -101,6 +101,7 @@ int largo = strlen(s);
 	 lcdData(*s);
 	 s++;
       }
+
     return largo;
   }
 
